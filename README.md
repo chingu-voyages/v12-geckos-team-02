@@ -1,6 +1,7 @@
 # Chingu Showcase Board
 
 > Chingu Showcase helps candiaates(Chingu alumni) display their tech stack, profile and projects worked on to recruiters and for recruiters to also identify potential candidates from the Chingu Showcase Board.
+
 > v12-geckos-team-02 | Voyage-12 | https://chingu.io/ | https://twitter.com/ChinguCollabs
 
 ---
