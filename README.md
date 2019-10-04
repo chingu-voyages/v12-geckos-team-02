@@ -1,4 +1,18 @@
-# JobBoard
+# Chingu JobBoard
+
+## v12-geckos-team-02 | Voyage-12 | https://chingu.io/ | https://twitter.com/ChinguCollabs
+
+### Project Description
+
+MVP
+Chingu Showcase board is a project that displays interested Chingu Participants, projects they have worked in a team or completed individually, their skills and techstack they are very familiar with. Recruiters can candidates with required skillset their portfolio and follow up on them.
+
+### Project Setup
+
+1. Step one :- `git clone repository`
+2. Step Two : - `cd into the repository`
+3. Run `ng serve`
+4. Navigate to `http://localhost:4200/`.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.8.
 
