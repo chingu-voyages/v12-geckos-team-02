@@ -6,5 +6,6 @@ export interface Profile {
   email: string,
   stack: string,
   country: string,
+  title: string,
   githubProfileUrl: string
 }
