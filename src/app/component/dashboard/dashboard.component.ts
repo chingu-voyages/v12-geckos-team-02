@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/service/user.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  profiles: any;
+
+  constructor(private userService: UserService, private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.fetchProfiles();
   }
+
+
+  fetchProfiles(){
+    this.userService.onFetchProfiles().subscribe(data => {
+      this.profiles = data;
+      console.log(this.profiles);
+    }, error => {
+      this.toastr.error('Unable to fetch Profiles');
+    })
+  }
+
 
 }

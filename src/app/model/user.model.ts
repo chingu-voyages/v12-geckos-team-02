@@ -1,6 +1,6 @@
 
-export interface User {
-  name: string,
+export interface Profile {
+  fullName: string,
   imageUrl: string,
   desc: string,
   email: string,

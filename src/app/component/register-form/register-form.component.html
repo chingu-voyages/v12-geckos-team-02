@@ -1,1 +1,106 @@
-<p>register-form works!</p>
+<div class="container card mt-5 shadow-lg p-3 mb-5 bg-white rounded">
+  <form #regForm="ngForm" (ngSubmit)="regForm.form.valid && onSubmit(regForm)">
+    <h1 class="display-5">Add Your Profile</h1>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input id="fullName" type="text" class="form-control" #fullName="ngModel" ngModel name="fullName" required>
+        </div>
+
+        <!-- Validation -->
+        <div *ngIf="fullName.touched && !fullName.valid" class="alert alert-danger">
+          <div *ngIf="fullName.errors.required"> Full Name is required </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="imageURL">Image URL</label>
+          <input id="imageURL" type="text" class="form-control" #imageURL="ngModel" ngModel name="imageURL" required>
+        </div>
+
+        <!-- Validation -->
+        <div *ngIf="imageURL.touched && !imageURL.valid" class="alert alert-danger">
+          <div *ngIf="imageURL.errors.required"> Image URL is required </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="desc">Brief Description</label>
+          <textarea id="desc" type="text" class="form-control" #desc="ngModel" ngModel name="desc" required placeholder="Briefly tell us about you and the tools (e.g. ReactJS) you use"></textarea>
+        </div>
+
+        <!-- Validation -->
+        <div *ngIf="desc.touched && !desc.valid" class="alert alert-danger">
+          <div *ngIf="desc.errors.required"> Description is required </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group col-md-3">
+        <label for="stack">Stack</label>
+        <select id="stack" ngModel #stack="ngModel" name="stack" class="form-control" required>
+          <option  disabled>Stack</option>
+          <option value="frontend">Front End</option>
+          <option value="backend">Back End</option>
+          <option value="fullstack">Full Stack</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-3">
+        <label for="country">Country</label>
+        <select id="country" ngModel #country="ngModel" name="country" class="form-control" required>
+          <option  disabled>country</option>
+          <option *ngFor="let country of countries" [value]="country.name">{{country.name}}</option>
+        </select>
+      </div>
+
+      <div class="form-group col-md-6">
+          <label for="email">Email</label>
+          <input id="email" type="email" class="form-control" #email="ngModel" ngModel name="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required>
+
+        <!-- Validation -->
+        <div *ngIf="email.touched && !email.valid" class="alert alert-danger">
+          <div *ngIf="email.errors.required && email.touched"> Email is required </div>
+          <div *ngIf="email.errors.pattern && email.touched"> Email is not valid </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <label for="githubProfileUrl">Github Profile URL</label>
+          <input id="githubProfileUrl" type="text" class="form-control" #githubProfileUrl="ngModel" ngModel name="githubProfileUrl" required>
+        </div>
+
+        <!-- Validation -->
+        <div *ngIf="githubProfileUrl.touched && !githubProfileUrl.valid" class="alert alert-danger">
+          <div *ngIf="githubProfileUrl.errors.required"> Github Profile URL is required </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
+          <button class="btn btn-outline-primary btn-block" [disabled]="regForm.invalid">Register</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
