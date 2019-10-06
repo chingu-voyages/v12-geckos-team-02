@@ -1,15 +1,15 @@
 .navbar-nav {
-    flex-direction: row
+  flex-direction: row;
 }
 
 .navbar-nav li {
-    padding-right: 5em;
+  padding-right: 5em;
 }
 
 .navbar-brand {
-    padding-left: 10em;
+  padding-left: 10em;
 }
 
 .navbar-nav {
-    padding-right: 12em
+  padding-right: 12em;
 }
