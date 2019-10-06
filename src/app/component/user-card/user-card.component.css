@@ -12,3 +12,21 @@
     padding: 0.5rem;
     font-weight: bold
 }
+
+.github-img,
+.email-img {
+    /* display: block; */
+    width: 2rem;
+    height: 2rem;
+    margin-right: 1rem
+}
+
+.email-img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon-div {
+    width: 30%;
+    margin: 0 auto;
+}
