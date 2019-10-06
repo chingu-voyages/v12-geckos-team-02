@@ -14,6 +14,7 @@ import { RegisterFormComponent } from './component/register-form/register-form.c
 import { UserCardComponent } from './component/user-card/user-card.component';
 import { NavbarComponent } from './component/navbar/navbar.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
