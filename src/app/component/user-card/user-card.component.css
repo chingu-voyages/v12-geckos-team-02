@@ -13,6 +13,14 @@
     font-weight: bold
 }
 
+.locate-img {
+    display: inline;
+}
+
+.country {
+    display: inline
+}
+
 .github-img,
 .email-img {
     /* display: block; */
@@ -26,7 +34,21 @@
     height: 1.5rem;
 }
 
+.locate-img {
+    width: 1rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+    padding-bottom: 0.2rem
+}
+
+.location {
+    width: 30%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+
 .icon-div {
     width: 30%;
     margin: 0 auto;
+    margin-bottom: 1rem
 }
