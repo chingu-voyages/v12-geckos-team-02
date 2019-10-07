@@ -1,18 +1,24 @@
-<div class="card shadow" style="width: 24rem; height: 30rem">
-    <img class="card-img-top center rounded-circle img-responsive" src="../../../assets/woman.jpg" alt="Profile image">
-    <div class="card-body">
-        <h5 class="card-title font-weight-bold text-center">Mercy Julius</h5>
-        <p class="text-center">UX design</p>
-        <div class="location">
-            <img class="locate-img" src="/assets/locate.png" alt="github icon">
-            <p class="text-center" class="country">Nigeria</p>
-        </div>
-        <p class="card-text text-center">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <div class="icon-div">
-            <img class="github-img" src="/assets/github.png" alt="github icon">
-            <img class="email-img" src="/assets/email.png" alt="github icon">
-        </div>
-        <!-- <a href="#" class="btn btn-primary btn-lg btn-block">Get connected</a> -->
-        <button class="btn btn-primary btn-lg btn-block"> Get connected</button>
+<div class="card shadow" style="width: 100%; height:80%;margin-bottom: 2rem;">
+  <img
+    class="card-img-top center rounded-circle img-responsive"
+    [src]="profile?.imageUrl"
+    alt="Profile image"
+  />
+  <div class="card-body">
+    <h5 class="card-title font-weight-bold text-center">
+      {{ profile?.fullName }}
+    </h5>
+    <p class="text-center">{{ profile?.stack }}</p>
+    <div class="location">
+      <img class="locate-img" src="/assets/locate.png" alt="github icon" />
+      <p class="text-center" class="country">{{ profile?.country }}</p>
     </div>
+    <p class="card-text text-center">{{ profile?.desc }}</p>
+    <div class="icon-div">
+      <img class="github-img" src="/assets/github.png" alt="github icon" />
+      <img class="email-img" src="/assets/email.png" alt="github icon" />
+    </div>
+    <!-- <a href="#" class="btn btn-primary btn-lg btn-block">Get connected</a> -->
+    <button class="btn btn-primary btn-lg btn-block">Get connected</button>
+  </div>
 </div>

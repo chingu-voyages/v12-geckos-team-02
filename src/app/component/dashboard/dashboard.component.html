@@ -1,2 +1,5 @@
-<p>dashboard works!</p>
-<app-user-card></app-user-card>
+<div class="row">
+  <div *ngFor="let profile of profiles" class="col-md-4">
+    <app-user-card [profile]="profile"></app-user-card>
+  </div>
+</div>
