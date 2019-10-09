@@ -1,6 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~ngx-toastr/toastr";
+body {
+  background: url("/assets/office.jpeg") no-repeat center center fixed;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
 body html {
   padding: 0;
   margin: 0;
