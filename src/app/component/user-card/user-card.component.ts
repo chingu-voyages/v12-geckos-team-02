@@ -7,18 +7,18 @@ import { Component, OnInit, Input } from "@angular/core";
 })
 export class UserCardComponent implements OnInit {
   @Input() profile: any;
-  // = {
-  //   fullName: "Abdul Busari",
-  //   imageUrl: "/assets/woman.jpg",
-  //   desc: "i love to program using css js and html",
-  //   email: "minitext@gmail.com",
-  //   stack: "fullstack developer",
-  //   country: "Nigeria",
-  //   title: "full",
-  //   githubProfileUrl: "https://github.com/Busry"
-  // };
-
+  viewMode: boolean;
+  smallDesc: string;
   constructor() {}
-
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.profile.desc.length > 25) {
+      this.viewMode = true;
+      this.smallDesc = this.profile.desc.slice(0, 60);
+    } else {
+      this.viewMode = false;
+    }
+  }
+  changeView() {
+    this.viewMode = !this.viewMode;
+  }
 }
