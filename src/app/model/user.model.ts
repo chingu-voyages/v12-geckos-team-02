@@ -1,11 +1,9 @@
 
 export interface Profile {
   fullName: string,
-  imageUrl: string,
-  desc: string,
+  imageURL: string,
   email: string,
   stack: string,
-  country: string,
   title: string,
   githubProfileUrl: string
 }

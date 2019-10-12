@@ -1,89 +1,137 @@
-h3,
-h5 {
-  text-align: center;
-  font-weight: bold;
+body{
+  background:rgb(255, 244, 244);
 }
-h3 {
-  margin: -25px auto 0 auto;
-}
-.btn {
-  background-color: #a3b2d9;
-  color: #fff;
-  padding: 0.5rem;
-  font-weight: bold;
-}
+   .profile-card{
+          position:relative;
+          overflow: hidden;
+          margin-bottom:10px;
+          box-shadow:0px 2px 3px #222;
+          top:50px;
+          height: auto;
+    }
 
-.locate-img,
-.country {
-  display: inline;
-}
+      .profile-card:hover .profile-img img {
+          transform: scale(1.2);
+      }
 
-.github-img,
-.email-img {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  margin-right: 1rem;
-}
+      .profile-card .profile-img img{
+          width:100%;
+          height: fit-content;
+          transition: transform 1s;
+          object-fit: cover;
+          height: 300px;
+      }
 
-.email-img {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+      .profile-card .profile-content::before{
+          content: "";
+          position:absolute;
+          top:0;
+          left:0;
+          width:50%;
+          height:40%;
+          border:3px solid #333;
+          border-right:3px solid transparent;
+          border-bottom:3px solid transparent;
+          transform: scale(1,1);
+          transition: all 0.50s linear;
+      }
 
-.locate-img {
-  width: 1rem;
-  height: 1.2rem;
-  margin-right: 0.5rem;
-  padding-bottom: 0.2rem;
-}
+      .profile-card .profile-content::after{
+          content: "";
+          position:absolute;
+          bottom:0;
+          right:0;
+          width:50%;
+          height:40%;
+          border:3px solid #222;
+          border-left:3px solid transparent;
+          border-top:3px solid transparent;
+          transition: all 0.50s linear;
 
-.location {
-  margin-bottom: 1rem;
-  margin: 0 auto;
-  text-align: center;
-}
+      }
+      .profile-card:hover .profile-content:before{
+          top:20px;
+          left:20px;
+      }
+      .profile-card:hover .profile-content:after{
+          bottom:20px;
+          right:20px;
+      }
 
-.p-4 {
-  padding: 1em 0 0 0 !important;
-}
-.imgs {
-  margin-top: -50px;
-  height: 100%;
-}
-.img {
-  text-align: center;
-  height: 20vh;
-}
-.fa-icon {
-  font-size: 26px;
-  color: #a3b2d9;
-}
-.card {
-  border-radius: 0;
-  box-shadow: 5px 5px 15px #a3b2d9;
-  transition: all 0.3s ease-in;
-  -webkit-transition: all 0.3s ease-in;
-  -moz-transition: all 0.3s ease-in;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
-}
-.card:hover {
-  background:red;
-  color: #fff;
-  border-radius: 5px;
-  border: none;
-  box-shadow: 5px 5px 10px #9e9e9e;
-}
-.card:hover h3 {
-  color: #fff;
-}
-.card:hover button {
-  color: rgb(3, 3, 3);
-  background: #fff;
-}
-.text-center {
-  text-align: center;
-  font-weight: 500px;
-  margin: 10px;
-}
+      .profile-card .profile-content{
+          position: absolute;
+          top:0;
+          left:0;
+          width:100%;
+          height:100%;
+          padding:50% 4%;
+          text-align: center;
+          cursor: pointer;
+
+
+      }
+      .profile-card .profile-content:hover{
+          background-color: rgba(0, 0, 0, 0.664);
+      }
+      .profile-card .profile-content .title{
+          font-size:24px;
+          color:white;
+          opacity:0;
+          letter-spacing:2px;
+          text-transform:capitalize;
+          transform: translateY(-100px);
+          transition:all 900ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.20s;
+      }
+      .profile-card .profile-content:hover .title{
+          opacity:1;
+          transform: translateY(0);
+      }
+      .profile-card:hover .title::after{
+          content:"";
+          display:block;
+          width:50%;
+          margin:10px auto;
+          border-bottom:2px solid #222;
+      }
+      .profile-card .profile-content .title > span{
+          display:block;
+          margin:5px 0;
+          font-size: 14px;
+          text-transform: capitalize;
+      }
+      .profile-card .profile-content .social-link{
+          margin:20px 0;
+          padding:0;
+          opacity:0;
+          transform: translateY(100px);
+          transition:all 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.20s;
+          cursor: pointer;
+
+      }
+      .profile-card .profile-content:hover .social-link{
+          opacity:1;
+          transform: translateY(0);
+      }
+      .profile-card .profile-content .social-link li{
+          display: inline-block;
+          list-style: none;
+          margin:0 4px;
+          cursor: pointer;
+
+      }
+      .profile-card .profile-content .social-link li a{
+          color:#333;
+          width:30px;
+          height:25px;
+          line-height:24px;
+          text-align: center;
+          border-radius:5px;
+          background-color: #fff;
+          cursor: pointer;
+      }
+
+      .box {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        grid-gap: 20px;
+      }
