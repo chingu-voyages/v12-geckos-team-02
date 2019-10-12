@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Profile } from 'src/app/model/user.model';
 
 @Component({
   selector: "app-user-card",
@@ -6,19 +7,9 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./user-card.component.css"]
 })
 export class UserCardComponent implements OnInit {
-  @Input() profile: any;
-  viewMode: boolean;
-  smallDesc: string;
+  @Input() profiles: Profile[];
   constructor() {}
   ngOnInit() {
-    if (this.profile.desc.length > 25) {
-      this.viewMode = true;
-      this.smallDesc = this.profile.desc.slice(0, 60);
-    } else {
-      this.viewMode = false;
-    }
   }
-  changeView() {
-    this.viewMode = !this.viewMode;
-  }
+
 }

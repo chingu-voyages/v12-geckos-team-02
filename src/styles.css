@@ -1,19 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
 @import "~ngx-toastr/toastr";
-body {
-   /* background-image:linear-gradient(to bottom, rgba(220, 238, 238,0.3), rgba(63, 191, 191,0.52)), url("/assets/office.jpeg") ;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover; */
- background-image:linear-gradient(to bottom, rgba(220, 238, 238,0.3), rgba(63, 191, 191,0.3))
- 
-}
-body html {
-  padding: 0;
-  margin: 0;
-}
 * {
   font-family: "Quicksand", sans-serif;
 }

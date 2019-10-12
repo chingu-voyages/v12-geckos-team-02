@@ -1,45 +1,21 @@
-<div class="card">
-  <div class="card-body">
-    <div class="img">
-      <img
-        class="img-fluid rounded-circle w-50 mb-3 imgs"
-        [src]="profile?.imageURL"
-        alt="Profile image"
-      />
-    </div>
-    <h3>{{ profile?.fullName }}</h3>
-    <h5>{{ profile?.stack }}</h5>
-    <div class="location">
-      <img class="locate-img" src="/assets/locate.png" alt="github icon" />
-      <p class="country">{{ profile?.country }}</p>
-    </div>
-
-    <div [ngSwitch]="viewMode" class="text-center">
-      <p *ngSwitchCase="true" (click)="changeView()">
-        {{ smallDesc }} <small>click..more</small>
-      </p>
-      <p *ngSwitchCase="false" (click)="changeView()">
-        {{ profile?.desc }}
-      </p>
-    </div>
-    <button class="btn btn-primary btn-lg btn-block">Contact</button>
-    <div class="d-flex flex-row justify-content-center">
-      <div class="p-4">
-        <a href="#"
-          ><img
-            class="github-img fa-icon"
-            src="/assets/github.png"
-            alt="github icon"
-        /></a>
+<div class="container">
+  <div class="row box" >
+      <div  *ngFor="let profile of profiles">
+          <div class="profile-card">
+              <div class="profile-img">
+                  <img [src]="profile.imageURL" alt="Team Image"/>
+              </div>
+              <div class="profile-content">
+                  <h2 class="title">{{profile.fullName}}
+                      <span>{{profile.title}}</span>
+                  </h2>
+                  <ul class="social-link">
+                      <li><a [href]='profile.githubProfileUrl' class="fa fa-github" target="_blank"></a></li>
+                      <li><a [href]='profile.email' class="fa fa-envelope-open" target="_blank"></a></li>
+                  </ul>
+              </div>
+          </div>
       </div>
-      <div class="p-4">
-        <a href="#"
-          ><img
-            class="email-img fa-icon"
-            src="/assets/email.png"
-            alt="github icon"
-        /></a>
-      </div>
-    </div>
   </div>
 </div>
+
