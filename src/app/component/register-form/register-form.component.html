@@ -111,6 +111,21 @@
     <div class="row">
       <div class="col-md-12">
         <div class="form-group">
+          <label for="linkedInProfileUrl">LinkedIn Profile URL</label>
+          <input id="linkedInProfileUrl" type="text" class="form-control" #linkedInProfileUrl="ngModel" ngModel name="linkedInProfileUrl" required>
+        </div>
+
+        <!-- Validation -->
+        <div *ngIf="linkedInProfileUrl.touched && !linkedInProfileUrl.valid" class="alert alert-danger">
+          <div *ngIf="linkedInProfileUrl.errors.required"> LinkedIn Profile URL is required </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group">
           <button class="btn btn-outline-primary btn-block" [disabled]="regForm.invalid">Register</button>
         </div>
       </div>
