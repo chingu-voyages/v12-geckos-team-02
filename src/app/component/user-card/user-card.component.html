@@ -8,11 +8,13 @@
               <div class="profile-content">
                   <h2 class="title">{{profile.fullName}}
                       <span>{{profile.title}}</span>
+                      <span>{{profile.email}}</span>
+
                   </h2>
-                  <ul class="social-link">
-                      <li><a [href]='profile.githubProfileUrl' class="fa fa-github" target="_blank"></a></li>
-                      <li><a [href]='profile.email' class="fa fa-envelope-open" target="_blank"></a></li>
-                  </ul>
+                  <div class="social-link">
+                      <a [href]='profile.linkedInProfileUrl' target="_blank"><i class="fa fa-linkedin"></i></a>
+                      <a [href]='profile.githubProfileUrl' target="_blank"><i class="fa fa-github"></i></a>
+                  </div>
               </div>
           </div>
       </div>

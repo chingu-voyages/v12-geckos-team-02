@@ -30,7 +30,7 @@ export class DashboardComponent implements OnInit {
     private userService: UserService,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.fetchProfiles();
@@ -42,6 +42,7 @@ export class DashboardComponent implements OnInit {
       data => {
         setTimeout(() => {
           this.profiles = data;
+          console.log(this.profiles)
           this.spinner.hide();
         }, 1000);
       },
@@ -49,30 +50,51 @@ export class DashboardComponent implements OnInit {
         this.toastr.error("Unable to fetch Profiles");
         this.spinner.hide();
       });
-      }
+  }
 
-      // frontend(){
-      //   this.filteredProfiles = this.profiles.filter(profile => {
-      //     return profile.stack === 'frontend';
-      //   })
-      //   this.profiles = this.filteredProfiles;
-      // }
+  frontend() {
+    this.spinner.show();
+    this.userService.onFetchProfiles().subscribe(
+      data => {
+        setTimeout(() => {
+          this.profiles = data.filter(profile => profile.stack === 'frontend');
+          this.spinner.hide();
+        }, 1000);
+      },
+      error => {
+        this.toastr.error("Unable to fetch Profiles");
+        this.spinner.hide();
+      });
+  }
 
-      // backend(){
-      //   this.filteredProfiles1 = () => this.profiles.filter(profile => {
-      //     return profile.stack === 'backend';
-      //   })
-      //   this.profiles = this.filteredProfiles1;
-      // }
+  backend() {
+    this.spinner.show();
+    this.userService.onFetchProfiles().subscribe(
+      data => {
+        setTimeout(() => {
+          this.profiles = data.filter(profile => profile.stack === 'backend');
+          this.spinner.hide();
+        }, 1000);
+      },
+      error => {
+        this.toastr.error("Unable to fetch Profiles");
+        this.spinner.hide();
+      });
+  }
 
-      // fullstack(){
-      //   this.filteredProfiles2 = this.profiles.filter(profile => {
-      //     return profile.stack === 'fullstack';
-      //   })
-      //   this.profiles = this.filteredProfiles2;
-      // }
+  fullstack() {
+    this.spinner.show();
+    this.userService.onFetchProfiles().subscribe(
+      data => {
+        setTimeout(() => {
+          this.profiles = data.filter(profile => profile.stack === 'fullstack');
+          this.spinner.hide();
+        }, 1000);
+      },
+      error => {
+        this.toastr.error("Unable to fetch Profiles");
+        this.spinner.hide();
+      });
+  }
 
-      // all(){
-      //   this.filteredProfiles = this.profiles;
-      //}
 }

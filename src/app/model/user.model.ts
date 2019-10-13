@@ -6,4 +6,5 @@ export interface Profile {
   stack: string,
   title: string,
   githubProfileUrl: string
+  linkedInProfileUrl: string;
 }

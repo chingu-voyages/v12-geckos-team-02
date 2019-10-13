@@ -112,14 +112,14 @@ body{
           opacity:1;
           transform: translateY(0);
       }
-      .profile-card .profile-content .social-link li{
+      /* .profile-card .profile-content .social-link li{
           display: inline-block;
           list-style: none;
           margin:0 4px;
           cursor: pointer;
 
-      }
-      .profile-card .profile-content .social-link li a{
+      } */
+      .profile-card .profile-content .social-link a{
           color:#333;
           width:30px;
           height:25px;
@@ -127,6 +127,10 @@ body{
           text-align: center;
           border-radius:5px;
           background-color: #fff;
+          cursor: pointer;
+          display: inline-block;
+          list-style: none;
+          margin:0 4px;
           cursor: pointer;
       }
 
