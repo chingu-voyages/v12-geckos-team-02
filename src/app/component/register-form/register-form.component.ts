@@ -31,27 +31,11 @@ export class RegisterFormComponent implements OnInit {
 
 
   onSubmit(profile: Profile){
-    if (this.imageExists(profile['value'].imageURL)){
       this.userService.onCreateProfile(profile['value']).subscribe(data => {
         this.toastr.success('Profile successfully created!');
         this.router.navigate(['/dashboard']);
       })
-    } else {
-      this.toastr.error('ImageURL not Valid!');
     }
 
   }
 
-  imageExists(url){
-    var image = new Image();
-    image.src = url;
-    if (!image.complete) {
-        return false;
-    }
-    else if (image.height === 0) {
-        return false;
-    }
-    return true;
-  }
-
-}
