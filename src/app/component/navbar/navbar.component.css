@@ -1,0 +1,27 @@
+nav {
+    background-color: #007BFF !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: bold
+}
+
+/* .navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav li {
+  padding-right: 5em;
+}
+
+.navbar-nav li a {
+    color: #fff;
+    font-weight: lighter
+}
+
+.navbar-brand {
+  padding-left: 10em;
+}
+
+.navbar-nav {
+  padding-right: 12em;
+} */

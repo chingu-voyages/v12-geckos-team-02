@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row box" >
+      <div  *ngFor="let profile of profiles">
+          <div class="profile-card">
+              <div class="profile-img">
+                  <img [src]="profile.imageURL" alt="Team Image"/>
+              </div>
+              <div class="profile-content">
+                  <h2 class="title">{{profile.fullName}}
+                      <span>{{profile.title}}</span>
+                      <span>{{profile.email}}</span>
+
+                  </h2>
+                  <div class="social-link">
+                      <a [href]='profile.linkedInProfileUrl' target="_blank"><i class="fa fa-linkedin"></i></a>
+                      <a [href]='profile.githubProfileUrl' target="_blank"><i class="fa fa-github"></i></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
